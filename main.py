@@ -1,10 +1,10 @@
 from chart import showCharts
 import matplotlib.pyplot as plt
 import random
+import time
 
-maxDigits = []
 searchValues = []
-iterationValues = []
+iterationValuesLinear = []
 iterationValuesBinary = []
 arrayNumber = list(range(1,101))
 
@@ -19,6 +19,7 @@ def searchAlgo(num, searchFor):
                 iteration += 1
         loopValues.append(iteration)
     return loopValues
+
 def binarySearch(num, searchFor):
     loopValuesBinary = []
     for search in searchFor:
@@ -41,22 +42,16 @@ def binarySearch(num, searchFor):
                 right = midpoint - 1
                 iteration += 1
                 midpoint = (right+left)//2
-            
         loopValuesBinary.append(iteration)
     return loopValuesBinary
-for i in range(3):
-    inputDigit = int(input("Enter max digit #{}: ".format(i+1)))
-    maxDigits.append(inputDigit)
-    searchValues.append([random.randint(1, inputDigit) for _ in range(100)])
-    iterationValues.append(searchAlgo(arrayNumber, searchValues[i]))
-    iterationValuesBinary.append(binarySearch(arrayNumber, searchValues[i]))
 
-showCharts.plotChart(iterationValues[0],
-                     iterationValues[1],
-                     iterationValues[2],
+inputDigit = int(input("Enter max digit #: "))
+searchValues.append([random.randint(1, inputDigit) for _ in range(100)])
+iterationValuesLinear.append(searchAlgo(arrayNumber, searchValues[0]))
+iterationValuesBinary.append(binarySearch(arrayNumber, searchValues[0]))
+
+showCharts.plotChart(iterationValuesLinear[0],
                      iterationValuesBinary[0],
-                     iterationValuesBinary[1],
-                     iterationValuesBinary[2],
                      arrayNumber)
 
 
