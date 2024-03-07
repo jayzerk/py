@@ -1,12 +1,12 @@
 from chart import showCharts
 import matplotlib.pyplot as plt
 import random
-import time
 
 searchValues = []
 iterationValuesLinear = []
 iterationValuesBinary = []
 arrayNumber = list(range(1,101))
+
 
 def searchAlgo(num, searchFor):
     loopValues = []
