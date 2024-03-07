@@ -33,12 +33,12 @@ def binarySearch(num, searchFor):
                 repeat = 0
                 break
             elif search > num[midpoint]:
-                print("search > "+str(search)+" : "+str(left)+" : "+str(right)+" : "+str(midpoint)+" : "+str(num[midpoint]))
+                #print("search > "+str(search)+" : "+str(left)+" : "+str(right)+" : "+str(midpoint)+" : "+str(num[midpoint]))
                 left = midpoint + 1
                 iteration += 1
                 midpoint = (right+left)//2
             elif search < num[midpoint]:
-                print("search < "+str(search)+" : "+str(left)+" : "+str(right)+" : "+str(midpoint)+" : "+str(num[midpoint]))
+                #print("search < "+str(search)+" : "+str(left)+" : "+str(right)+" : "+str(midpoint)+" : "+str(num[midpoint]))
                 right = midpoint - 1
                 iteration += 1
                 midpoint = (right+left)//2
